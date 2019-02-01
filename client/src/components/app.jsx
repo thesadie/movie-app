@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import MovieListItem from './movieListItem.jsx';
+import Search from './search.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -28,6 +29,9 @@ class App extends React.Component {
     return (
       <div>
         <div id='topbar'>Movie List</div>
+        <div id='searchbar'>
+          <Search />
+        </div>
         <div id='movieList'>
           {list}
         </div>

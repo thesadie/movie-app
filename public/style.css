@@ -9,6 +9,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#searchbar {
+  margin: 20px;
+}
+
 #topbar {
   background-color: #eee;
   border-bottom: #ddd solid 1px;
