@@ -10,14 +10,14 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      movies: []
+      movies: [],
+      searchTerm: 'a'
     }
 
   }
 
   componentDidMount() {
-    // get request to movies and set state
-    $.get('/movies', (data) => {
+    $.get(`/movies/${this.state.searchTerm}`, (data) => {
       this.setState({ movies: JSON.parse(data) })
     })
   }

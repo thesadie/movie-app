@@ -12,8 +12,6 @@ var connection = mysql.createConnection({
   database : 'movies'
 });
 
-
-
 app.use(express.static(__dirname + '/../public'));
 
 // parse application/x-www-form-urlencoded
@@ -22,9 +20,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('/movies', (req, res) => {
+app.get('/movies/:searchTerm', (req, res) => {
+  let searchTerm =req.params.searchTerm;
 
-  connection.query('SELECT * FROM titles;', (err, movies) => {
+  connection.query(`SELECT * FROM titles WHERE (title LIKE '%${searchTerm}%');`, (err, movies) => {
     if (err) {
       console.log(err)
     } else {
@@ -34,5 +33,6 @@ app.get('/movies', (req, res) => {
   });
 
 })
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
