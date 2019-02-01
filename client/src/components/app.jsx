@@ -27,8 +27,10 @@ class App extends React.Component {
 
     return (
       <div>
-        <h2>Movie List</h2>
-        <ul>{list}</ul>
+        <div id='topbar'>Movie List</div>
+        <div id='movieList'>
+          {list}
+        </div>
       </div>
     )
   }

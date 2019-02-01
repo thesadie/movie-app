@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 function MovieListItem(props) {
   return (
-    <li>{props.title}</li>
+    <div className='titleBox'>{props.title}</div>
   )
 }
 

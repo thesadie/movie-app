@@ -1,0 +1,32 @@
+.titleBox {
+  border: #ddd solid 1px;
+  border-bottom: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 50px;
+  padding: 5px 20px 5px 20px;
+  line-height: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#topbar {
+  background-color: #eee;
+  border-bottom: #ddd solid 1px;
+  height: 60px;
+  line-height: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+#movieList {
+  padding: 20px 10px 20px 10px;
+}
+
+#app {
+  border: #ddd solid 2px;
+}
+
+.titleBox:last-child {
+  border-bottom: 1px solid #ddd;
+}
