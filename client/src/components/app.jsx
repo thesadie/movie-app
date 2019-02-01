@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
 
 import MovieListItem from './movieListItem.jsx';
 import Search from './search.jsx'
@@ -9,15 +10,16 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      movies: [
-        { title: 'Mean Girls' },
-        { title: 'Hackers' },
-        { title: 'The Grey' },
-        { title: 'Sunshine' },
-        { title: 'Ex Machina' },
-      ]
+      movies: []
     }
 
+  }
+
+  componentDidMount() {
+    // get request to movies and set state
+    $.get('/movies', (data) => {
+      this.setState({ movies: JSON.parse(data) })
+    })
   }
 
   render() {
