@@ -22,6 +22,22 @@ class App extends React.Component {
     })
   }
 
+  searchSubmit() {
+    $.get(`/movies/${this.state.searchTerm}`, (data) => {
+      this.setState({ movies: JSON.parse(data) })
+    })
+  }
+
+  searchOnChange(query) {
+    this.setState({searchTerm: query});
+  }
+
+  componentDidUpdate() {
+    $.get(`/movies/${this.state.searchTerm}`, (data) => {
+      this.setState({ movies: JSON.parse(data) })
+    })
+  }
+
   render() {
     var movies = this.state.movies;
     var list = movies.map((movie, key) => {
@@ -32,7 +48,7 @@ class App extends React.Component {
       <div>
         <div id='topbar'>Movie List</div>
         <div id='searchbar'>
-          <Search />
+          <Search onSubmit={this.searchSubmit.bind(this)} onChange={this.searchOnChange.bind(this)}/>
         </div>
         <div id='movieList'>
           {list}

@@ -2,9 +2,9 @@ import React from 'react';
 
 function Search(props) {
   return (
-    <form>
-      <input placeholder="Search..."></input>
-      <button>Go!</button>
+    <form onSubmit={props.onSubmit}>
+      <input placeholder="Search..." onChange={props.onChange}></input>
+      <input type='submit' value='Go!'></input>
     </form>
   )
 }
